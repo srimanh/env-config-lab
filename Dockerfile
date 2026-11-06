@@ -7,10 +7,7 @@ RUN npm install
 
 COPY app/ .
 
-# Intentionally planted problem 3: Secret hardcoded
-ENV API_KEY=super-secret-key
-
-# Intentionally planted problem 2: Typo in variable name
-ENV LOGLEVEL=info
+# Configuration is supplied when the container is created.
+# No API_KEY or misleading LOGLEVEL default belongs in this image.
 
 CMD [ "npm", "start" ]
